@@ -2,10 +2,29 @@ let userChoice = prompt("Please choose Rock, Paper, or Scissors").toUpperCase();
 console.log(userChoice);
 let computerChoice = Math.random();
 if (computerChoice <= 0.34) {
-    computerChoice = "rock";
+    computerChoice = "ROCK";
 } else if (computerChoice <= 0.67){
-    computerChoice = "paper";
+    computerChoice = "PAPER";
 } else {
-    computerChoice = "scissors";
+    computerChoice = "SCISSORS";
 }
 console.log(computerChoice);
+
+let playerScore = 0;
+let computerScore = 0;
+let roundWinner = " ";
+
+function playRound(userChoice, computerChoice){
+    if (userChoice === computerChoice){
+        roundWinner = "Tie"
+    }
+    if (
+        (userChoice === "ROCK" && computerChoice === "SCISSORS") ||
+        (userChoice === "PAPER" && computerChoice === "ROCK") ||
+        (userChoice === "SCISSORS" && computerChoice === "PAPER")
+    ){
+        playerScore++;
+        roundWinner = "Player"
+    }
+}
+console.log(roundWinner);
