@@ -16,6 +16,7 @@ function getComputerChoice(){
 function playRound(userChoice, computerChoice) {
     //Tie breaker
     if (userChoice === computerChoice){
+        tie++;
         return "Tie!"
     }
     else if ( //Player wins scenarios
@@ -41,8 +42,9 @@ function game(){
         let playerChoice = prompt("Choose Rock, Paper, or Scissors").toUpperCase();
         let computerChoice = getComputerChoice();
         console.log(playRound(playerChoice,computerChoice));
-        console.log(playerScore);
-        console.log(computerScore);
+        console.log("Player Score = " + playerScore);
+        console.log("Computer Score = " + computerScore);
+        console.log("Tie Breakers = " + tie);
     }
 }
 
