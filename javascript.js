@@ -26,5 +26,13 @@ function playRound(userChoice, computerChoice){
         playerScore++;
         roundWinner = "Player"
     }
+    if (
+        (userChoice === "ROCK" && computerChoice === "PAPER") ||
+        (userChoice === "PAPER" && computerChoice === "SCISSORS") ||
+        (userChoice === "SCISSORS" && computerChoice === "ROCK")
+    ){
+        computerScore++;
+        roundWinner = "Computer"
+    }
 }
-console.log(roundWinner);
+console.log(playRound(userChoice,computerChoice));
