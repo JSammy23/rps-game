@@ -40,18 +40,17 @@ function playRound(userChoice, computerChoice) {
 function game(){
     for (var i = 0; i < 5; i++){
         //let playerChoice = prompt("Choose Rock, Paper, or Scissors").toUpperCase();
-        let playerChoice = userChoice;
         let computerChoice = getComputerChoice();
-        //console.log(playRound(playerChoice,computerChoice));
-        //console.log("Player Score = " + playerScore);
-        //console.log("Computer Score = " + computerScore);
-        //console.log("Tie Breakers = " + tie);
+        console.log(playRound(userChoice,computerChoice));
+        console.log("Player Score = " + playerScore);
+        console.log("Computer Score = " + computerScore);
+        console.log("Tie Breakers = " + tie);
     }
 }
 
 
 
-//console.log(game());
+
 
 // User Interface //
 document.getElementById('ROCK').onclick = player;
@@ -59,6 +58,8 @@ document.getElementById('PAPER').onclick = player;
 document.getElementById('SCISSORS').onclick = player;
 
 function player() {
-    var playerChoice = this.id;
-    console.log("user: " + playerChoice)
+    var userChoice = this.id;
+    console.log("user: " + userChoice)
 }
+
+console.log(game());
