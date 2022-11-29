@@ -2,6 +2,13 @@ let playerScore = 0;
 let computerScore = 0;
 let tie = 0;
 
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+const userScore = document.querySelector('#userScore');
+const comScore = document.querySelector('#computerScore');
+const roundResults = document.querySelector('#results');
+
 function getComputerChoice(){
     let random = Math.random();
     if (random <= 0.33){
@@ -17,6 +24,7 @@ function playRound(userChoice, computerChoice) {
     //Tie breaker
     if (userChoice === computerChoice){
         tie++;
+        roundResults.textContent= "Tie!"
         return "Tie!"
     }
     else if ( //Player wins scenarios
@@ -25,6 +33,7 @@ function playRound(userChoice, computerChoice) {
         (userChoice === "scissors" && computerChoice === "paper")
     ){
         playerScore++;
+        roundResults.textContent= `You Win! ${userChoice} beats ${computerChoice}`;
         return "You Win!"
     }
      else if ( //Computer wins scenarios
@@ -33,6 +42,7 @@ function playRound(userChoice, computerChoice) {
         (userChoice === "scissors" && computerChoice === "rock")
     ){
         computerScore++;
+        roundResults.textContent = `You lose! ${computerChoice} beats ${userChoice}`;
         return "Computer Wins!"
     }
 }
@@ -48,16 +58,7 @@ function game(){
     }
 }
 
-
-
-
-
 // User Interface //
-let rock = document.querySelector('#rock');
-let paper = document.querySelector('#paper');
-let scissors = document.querySelector('#scissors');
-let userScore = document.querySelector('#userScore');
-let comScore = document.querySelector('#computerScore');
 
 // Buttons to select player choice and start round //
 rock.addEventListener('click', player);
@@ -71,8 +72,9 @@ function player() {
     console.log("Computer: " + computerChoice);
     console.log(playRound(userChoice, computerChoice));
     // ScoreBoard //
-    userScore.innerHTML = playerScore;
-    comScore.innerHTML = computerScore;
+    userScore.innerHTML = `Score: ${playerScore}`;
+    comScore.innerHTML = `Score: ${computerScore}`;
+    
 }
 
 

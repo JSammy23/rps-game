@@ -5,24 +5,22 @@
 }
 
 .scoreboard {
-  border: 2px solid black;
   display: flex;
   width: 50vw;
   height: 120px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 7vh;
 }
 
 .userScore-cont,
 .comScore-cont {
-  border: 2px solid lime;
   width: 50%;
   justify-content: center;
   align-items: center;
 }
 
 .controls {
-  border: 2px solid red;
   display: flex;
   justify-content: space-around;
 }
@@ -31,4 +29,21 @@ button {
   width: 100px;
   height: 50px;
 
+}
+
+#results {
+  border: 5px solid lime;
+  display: flex;
+  height: 50px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+#result-cont {
+  text-align: center;
+  margin-top: 45px;
 }
