@@ -56,16 +56,23 @@ function game(){
 let rock = document.querySelector('#rock');
 let paper = document.querySelector('#paper');
 let scissors = document.querySelector('#scissors');
+let userScore = document.querySelector('#userScore');
+let comScore = document.querySelector('#computerScore');
 
+// Buttons to select player choice and start round //
 rock.addEventListener('click', player);
 paper.addEventListener('click', player);
 scissors.addEventListener('click', player);
 
 function player() {
-    var userChoice = this.id;
+    let userChoice = this.id;
     let computerChoice = getComputerChoice();
-    console.log("user: " + userChoice);
+    console.log("Player: " + userChoice);
     console.log("Computer: " + computerChoice);
     console.log(playRound(userChoice, computerChoice));
+    // ScoreBoard //
+    userScore.innerHTML = playerScore;
+    comScore.innerHTML = computerScore;
 }
+
 
