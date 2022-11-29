@@ -5,11 +5,11 @@ let tie = 0;
 function getComputerChoice(){
     let random = Math.random();
     if (random <= 0.33){
-        return "ROCK";
+        return "rock";
     } else if (random >= 0.66){
-        return "PAPER";
+        return "paper";
     } else {
-        return "SCISSORS"
+        return "scissors"
     }
 }
 
@@ -20,17 +20,17 @@ function playRound(userChoice, computerChoice) {
         return "Tie!"
     }
     else if ( //Player wins scenarios
-        (userChoice === "ROCK" && computerChoice === "SCISSORS") ||
-        (userChoice === "PAPER" && computerChoice === "ROCK") ||
-        (userChoice === "SCISSORS" && computerChoice === "PAPER")
+        (userChoice === "rock" && computerChoice === "scissors") ||
+        (userChoice === "paper" && computerChoice === "rock") ||
+        (userChoice === "scissors" && computerChoice === "paper")
     ){
         playerScore++;
         return "You Win!"
     }
      else if ( //Computer wins scenarios
-        (userChoice === "ROCK" && computerChoice === "PAPER") ||
-        (userChoice === "PAPER" && computerChoice === "SCISSORS") ||
-        (userChoice === "SCISSORS" && computerChoice === "ROCK")
+        (userChoice === "rock" && computerChoice === "paper") ||
+        (userChoice === "paper" && computerChoice === "scissors") ||
+        (userChoice === "scissors" && computerChoice === "rock")
     ){
         computerScore++;
         return "Computer Wins!"
@@ -53,13 +53,19 @@ function game(){
 
 
 // User Interface //
-document.getElementById('ROCK').onclick = player;
-document.getElementById('PAPER').onclick = player;
-document.getElementById('SCISSORS').onclick = player;
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('#scissors');
+
+rock.addEventListener('click', player);
+paper.addEventListener('click', player);
+scissors.addEventListener('click', player);
 
 function player() {
     var userChoice = this.id;
-    console.log("user: " + userChoice)
+    let computerChoice = getComputerChoice();
+    console.log("user: " + userChoice);
+    console.log("Computer: " + computerChoice);
+    console.log(playRound(userChoice, computerChoice));
 }
 
-console.log(game());
