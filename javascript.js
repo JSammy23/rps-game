@@ -8,6 +8,8 @@ const scissors = document.querySelector('#scissors');
 const userScore = document.querySelector('#userScore');
 const comScore = document.querySelector('#computerScore');
 const roundResults = document.querySelector('#results');
+const closeModalBtn = document.querySelectorAll('[data-close-button]');
+const overlay = document.querySelector('#overlay');
 
 function getComputerChoice(){
     let random = Math.random();
