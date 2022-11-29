@@ -10,6 +10,19 @@ const comScore = document.querySelector('#computerScore');
 const roundResults = document.querySelector('#results');
 const closeModalBtn = document.querySelectorAll('[data-close-button]');
 const overlay = document.querySelector('#overlay');
+const openModalBtn = document.querySelectorAll('[data-modal-target]')
+
+function openModal(modal) {
+    if (modal == null) return
+   modal.classList.add('active') // Modal not defined//
+   overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active') //Modal not defined//
+    overlay.classList.remove('active')
+}
 
 function getComputerChoice(){
     let random = Math.random();
@@ -79,4 +92,16 @@ function player() {
     
 }
 
+openModalBtn.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget);
+        openModal(modal);
+    })
+})
 
+closeModalBtn.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal')
+        closeModal(modal);
+    })
+})
