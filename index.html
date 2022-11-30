@@ -33,15 +33,17 @@
       <h3>Round Results</h3>
       <div id="results"></div>
     </div>
-    <button id="openModal" date-modal-target="#modal">End Game</button>
-    <div id="modal" class="end-game-modal">
-      <div class="modal-header title">Game Over!
-        <button data-close-button class="modal-close title">&times;</button>
-      </div>
-      <div class="modal-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium deserunt recusandae reprehenderit mollitia dolorum porro corporis voluptatem vero quia ad! Dolorum magni, necessitatibus perferendis suscipit debitis obcaecati voluptate! In placeat et eaque enim, asperiores possimus maxime odio animi quisquam dicta.
-      </div>
+    <button data-modal-target="#modal">End Game</button>
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">Game Over!</div>
+      <button data-close-button class="close-button">&times;</button>
     </div>
-    <div id="overlay"></div>
+    <div class="modal-body">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus, consectetur quisquam accusamus ex, dolorum, dicta vel?
+    </div>
+  </div>
+  <div id="overlay"></div>
     <script src="javascript.js"></script>
   </body>
 </html>
