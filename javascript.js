@@ -11,7 +11,7 @@ const roundResults = document.querySelector('#results');
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
-const endMessage = document.querySelector('modal-body');
+const endMessage = document.querySelector('.modal-body');
 
 openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -113,6 +113,7 @@ function player() {
     comScore.innerHTML = `Score: ${computerScore}`;
     if (playerScore == 5 || computerScore == 5){
         openModal(modal)
+        endMessage.textContent= "That's all Folks!"
     }
 }
 
