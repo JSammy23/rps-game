@@ -29,13 +29,13 @@ body {
   margin-right: auto;
   margin-top: 7vh;
   margin-bottom: 50px;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .userScore-cont,
 .comScore-cont {
-  width: 50%;
-  justify-content: center;
-  align-items: center;
+ 
 }
 
 .controls {
