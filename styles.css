@@ -1,3 +1,5 @@
+<style> @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap'); </style>
+
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +7,18 @@
 }
 
 body {
-  color: lime;
+  color: black;
   background-color: black;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 2rem;
+}
+
+.wrapper {
+  background-image: url(img/paper.jpg);
+  height: 50vh;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .scoreboard {
@@ -16,6 +28,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 7vh;
+  margin-bottom: 50px;
 }
 
 .userScore-cont,
@@ -36,19 +49,28 @@ body {
 #endGame  {
   width: 100px;
   height: 50px;
-  color: lime;
-  background-color: black;
-  border: 2px solid lime;
+  color: black;
+  background-image: url(img/wrinkled.jpg);
+  border-radius: 10px;
+  border: none;
   cursor: pointer;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1.75rem;
 }
 
 #endGame {
+  width: 150px;
+}
+
+.endBtn-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 150px;
-  margin-left: 45%;
 }
 
 #results {
-  border: 5px solid lime;
   display: flex;
   height: 50px;
   width: 50%;

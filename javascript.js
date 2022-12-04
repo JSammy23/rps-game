@@ -31,6 +31,7 @@ openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
       const modal = button.closest('.modal')
       closeModal(modal)
+      reloadPage()
     })
   })
 
@@ -95,6 +96,9 @@ function game(){
     }
 }
 
+function reloadPage() {
+  window.location.reload();
+}
 // User Interface //
 
 // Buttons to select player choice and start round //
