@@ -24,6 +24,7 @@ openModalButtons.forEach(button => {
     const modals = document.querySelectorAll('.modal.active')
     modals.forEach(modal => {
       closeModal(modal)
+      reloadPage()
     })
   })
 
